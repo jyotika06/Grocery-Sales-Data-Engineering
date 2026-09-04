@@ -31,34 +31,6 @@ The main objectives of this project are:
 
 The project follows a Lakehouse-based Data Engineering Architecture.
 
-```text
-Source Grocery Sales Data
-          ↓
-Azure Data Lake Storage Gen2
-          ↓
-       Bronze
-          ↓
-       Silver
-          ↓
-        Gold
-          ↓
-   Data Quality - PyTest
-          ↓
- Databricks Dashboards
-          ↓
-     Business Insights
-
-Databricks Job
-     ↓
-Silver → Gold → PyTest
-     ↓
-Slack Notifications
-
-Apache Airflow
-     ↓
-Databricks ETL Workflow
-```
-
 ### High Level Design
 
 ![High Level Design](Design/High-level-Structure.png)
@@ -471,9 +443,10 @@ Grocery-Sales-Data-Engineering/
 ├── Test/
 │   └── test_data_quality.ipynb
 │
-├── docs/
-│   ├── HLD.png
-│   └── Data_Model.png
+├── Design/
+│   ├── Data-Model.png
+│   └── high-level-Structure.png
+|   |__Low-Level.png
 │
 └── README.md
 ```
