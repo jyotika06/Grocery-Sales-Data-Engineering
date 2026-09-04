@@ -372,10 +372,23 @@ Airflow will be used to:
 - Monitor execution status.
 - Support retry and failure handling.
 
-> **Status:** Airflow orchestration integration is currently in progress and will be added to the repository after completion.
+> ### Apache Airflow Orchestration ✅
 
-This section will be updated with the Airflow DAG and execution screenshots once implementation is complete.
+Apache Airflow is used as the external orchestration layer for the Databricks ETL pipeline.
 
+**Execution Flow:**
+
+Airflow DAG → Databricks Job → Silver Transformation → Gold Transformation → PyTest Data Quality Checks → Slack Notification
+
+- Created an Airflow DAG using `DatabricksRunNowOperator`
+- Configured the Databricks connection securely in Airflow
+- Airflow triggers the existing Databricks ETL Job
+- Databricks executes Silver → Gold → PyTest tasks in dependency order
+- Airflow monitors the Databricks job until completion
+- Successfully validated the end-to-end Airflow → Databricks integration
+- Slack provides Success/Failure job notifications
+
+**Status:** Successfully Implemented and Tested ✅
 ---
 
 ## ⚠️ Alerts, Monitoring & Logging
