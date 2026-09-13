@@ -152,7 +152,7 @@ The Gold layer is used directly for Databricks dashboard reporting.
 
 The project data model represents the relationship between grocery sales, stores, transactions, promotions, holidays, and other supporting datasets.
 
-![Data Model](Design/data-model.jpeg)
+![Data Model](Design/data-Model.jpeg)
 
 
 
